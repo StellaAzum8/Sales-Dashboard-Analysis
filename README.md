@@ -1,167 +1,119 @@
-# 📊 Sales Performance Analysis Dashboard
+---
 
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![DAX](https://img.shields.io/badge/DAX-FF6600?style=for-the-badge&logo=dax&logoColor=white)
-![Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+# **Sales Analysis Dashboard**
 
-## 📋 Project Overview
-
-An interactive Power BI dashboard designed to provide comprehensive insights into sales performance, profitability, and operational metrics across multiple products, countries, and market segments. This project demonstrates advanced data visualization, DAX calculations, and business intelligence storytelling.
+![Sales Dashboard](https://drive.google.com/file/d/1H0Hikr980-zRqc_wUUq6M9LoPYmVnL-J/view?usp=drivesdk)
 
 ---
 
-## 🎯 Business Problem
+## **Project Overview**
+This Sales Analysis Dashboard is a professional visualization tool built in **Power BI**, designed to deliver actionable insights into sales performance, cost of goods sold (COGS), profitability, and product/manufacturing pricing. It enables interactive, filter-driven exploration of sales data by country, year, and customer segment.
 
-Management required a centralized view of sales operations to:
-- Identify top-performing products and regions
-- Analyze profitability trends over time
-- Optimize inventory and manufacturing decisions
-- Track COGS (Cost of Goods Sold) efficiency
-- Support data-driven strategic planning
+The dashboard covers **6 products** across **5 countries**, with all monetary figures reported in **Nigerian Naira (₦)**.
 
 ---
 
-## 📊 Dashboard Preview
-
-![Sales Dashboard](images/sales-dashboard.png)
-
-*Interactive dashboard featuring drill-down capabilities, dynamic filtering, and real-time metric updates*
-
----
-
-## 🔍 Key Insights
-
-### Financial Performance
-- **Total Sales**: ₦118.73M
-- **Total Profit**: ₦16.89M (14.2% profit margin)
-- **COGS**: ₦101.83M
-- **Active Operations**: 5 countries, 6 products
-
-### Product Analysis
-- **VTF** emerges as the highest profit contributor
-- **Paseo** leads in total sales volume
-- Manufacturing price variations indicate optimization opportunities
-
-### Geographic Performance
-- Multi-country presence across North America and Europe
-- Regional performance clustering visible through interactive map
-
-### Temporal Trends
-- Profit peaked in early months with gradual decline
-- Seasonal patterns suggest strategic timing for campaigns
+## **Project Objectives**
+- **Analyze COGS, Sales, and Profit:** Break down performance by product.
+- **Identify Top and Bottom Performers:** Determine which products drive the most (and least) revenue, cost, and profit.
+- **Track Seasonal Trends:** Explore month-by-month profit performance across the year.
+- **Geographical Insights:** Visualize where sales activity is concentrated (North America and Europe).
+- **Manufacturing Cost Analysis:** Compare manufacturing price across products.
 
 ---
 
-## 🛠️ Technologies & Tools
+## **Dashboard Breakdown**
 
-- **Power BI Desktop**: Primary dashboard development
-- **DAX (Data Analysis Expressions)**: Advanced calculations and measures
-- **Power Query**: Data transformation and cleaning
-- **Excel**: Initial data exploration and validation
+### **1. Key Metrics (KPI Cards)**
+- **Count of Country:** 5
+- **Count of Product:** 6
+- **Sum of COGS:** ₦101.83M
+- **Sum of Sales:** ₦118.73M
+- **Sum of Profit:** ₦16.89M
 
----
+### **2. Sum of COGS by Product (Pie Chart)**
+- Breaks down total COGS (₦101.83M) across all 6 products: **Paseo, VTT, Velo, Amarilla, Montana, Carretera**.
+- **Paseo** holds the largest share at **27.71% (₦28.21M)**.
+- The remaining products range between roughly **11.77% and 17.16%** of total COGS each.
 
-## ✨ Features
+**Insight:** Paseo carries the heaviest cost burden — worth checking whether its cost is proportionate to its revenue contribution.
 
-✅ **Interactive Filtering**: Dynamic slicers for Country, Year, and Segment  
-✅ **Geographic Visualization**: Interactive map with drill-down capability  
-✅ **Time-Series Analysis**: Monthly profit trends with forecasting potential  
-✅ **Product Comparison**: Side-by-side performance metrics  
-✅ **Cost Analysis**: COGS breakdown by product category  
-✅ **KPI Cards**: Real-time summary metrics
+### **3. Sum of Profit by Month Name (Bar Chart)**
+- Tracks monthly profit trend through the year (Jan–Dec).
+- Profit starts highest in **January** and generally trends downward through the middle of the year, with smaller bars toward mid-to-late year.
 
----
+**Insight:** Early-year months are the strongest profit periods — useful for planning promotions or inventory ahead of the next cycle.
 
-## 📈 Key Metrics & Calculations
+### **4. Sum of Profit by Product (Bar Chart)**
+- Ranks products by profit contribution, from highest to lowest:
+  **Paseo > VTT > Amarilla > Velo > Montana > Carretera**
 
-### Custom DAX Measures Created:
+**Insight:** Paseo leads in both cost and profit — it's the dashboard's most significant product by volume.
 
-```dax
-Total Profit = SUM(Sales[Profit])
+### **5. Country (Map Visualization)**
+- Plots sales activity geographically, with markers concentrated in **North America** and **Europe**.
 
-Profit Margin % = 
-DIVIDE(
-    [Total Profit],
-    [Total Sales],
-    0
-) * 100
+**Insight:** Sales presence is currently limited to a small number of countries (5 total) — useful for spotting expansion opportunities.
 
-YoY Growth = 
-DIVIDE(
-    [Total Sales] - [Previous Year Sales],
-    [Previous Year Sales],
-    0
-)
-```
+### **6. Sum of Sales by Product (Bar Chart)**
+- Shows sales value and share of total, per product:
+  - **Paseo:** ₦20.51M
+  - **VTT:** (leading share, near top of ranking)
+  - **Velo:** ₦18.25M
+  - **Amarilla:** ₦17.75M
+  - **Montana:** ₦15.39M
+  - **Carretera:** ₦13.62M
 
----
+**Insight:** Paseo and VTT are the strongest sales performers; Carretera lags behind the rest.
 
-## 🔄 Data Methodology
+### **7. Sum of Manufacturing Price by Product (Bar Chart)**
+- Compares manufacturing price across products:
+  **VTT > Amarilla > Velo > Paseo > Montana > Carretera**
 
-1. **Data Collection**: Aggregated sales data from multiple sources
-2. **Data Cleaning**: Handled missing values, standardized formats
-3. **Data Modeling**: Created star schema with fact and dimension tables
-4. **DAX Calculations**: Built measures for KPIs and analytical insights
-5. **Visualization**: Designed user-friendly, interactive dashboard
-6. **Validation**: Cross-checked calculations with source data
+**Insight:** VTT has the highest manufacturing price despite not leading in sales or profit — worth investigating margin efficiency here.
 
----
+### **8. Filters (Slicers)**
+- **Country Filter:** Drill into performance by specific country.
+- **Year Filter:** Compare performance across years.
+- **Segment Filter:** View by customer segment.
 
-## 💡 Business Recommendations
-
-Based on the analysis, I recommend:
-
-1. **Focus on VTF Product Line**: Highest profitability warrants increased marketing investment
-2. **Investigate Profit Decline**: Address the downward trend in monthly profits
-3. **Regional Expansion**: Leverage strong performance in top regions
-4. **Cost Optimization**: Review manufacturing prices for underperforming products
-5. **Seasonal Strategy**: Align inventory with identified seasonal patterns
+**Insight:** Filters allow quick pivoting between views for deeper, targeted analysis.
 
 ---
 
-## 📂 Project Structure
-
-```
-sales-analysis-dashboard/
-│
-├── images/
-│   └── sales-dashboard.png
-│
-├── data/
-│   └── sales_data.xlsx (sample data)
-│
-├── documentation/
-│   └── data-dictionary.md
-│
-└── README.md
-```
+## **Key Insights**
+1. **Paseo is the standout product** — highest in COGS, sales, and profit.
+2. **VTT has the highest manufacturing price** but doesn't top sales or profit — a margin efficiency question worth exploring.
+3. **Carretera consistently ranks lowest** across sales, profit, and manufacturing price.
+4. **January is the strongest profit month**, with profit generally declining through the year.
+5. **Geographic reach is limited to 5 countries**, concentrated in North America and Europe.
 
 ---
 
-## 🚀 How to Use
-
-1. Download the `.pbix` file from this repository
-2. Open with Power BI Desktop (latest version recommended)
-3. Refresh data connections if using live data sources
-4. Interact with filters and visuals to explore insights
-
-**Note**: If you don't have Power BI Desktop, you can [download it for free from Microsoft](https://powerbi.microsoft.com/desktop/)
+## 🛠 **Tools Used**
+- **Power BI:**
+  - Data modeling and transformation.
+  - Interactive slicers for dynamic filtering (Country, Year, Segment).
+  - Bar charts, pie chart, and map visualization for effective data storytelling.
 
 ---
 
-## 📧 Contact
+## 🤝 **Collaboration and Feedback**
+This dashboard is open to collaboration and feedback!
 
-**Stella**  Data Analyst 
-💼 [LinkedIn](your-linkedin-url)  
-📧 [Email](your-email@example.com)  
-🌐 [Portfolio](your-portfolio-url)
-
----
-
-## 🙏 Acknowledgments
-
-This project was created as part of my data analytics portfolio to demonstrate proficiency in business intelligence and data visualization.
+If you have suggestions or want to contribute:
+- Raise an **issue** on GitHub.
+- Submit a **pull request** with recommendations for improvement.
 
 ---
 
-*⭐ If you found this project interesting, please consider giving it a star!*
+## 📧 **Contact Information**
+**Azum Stella**
+- **LinkedIn:** [https://www.linkedin.com/in/azum-stella]
+- **Email:** [azumstelladamilola10@gmail.com]
+
+---
+
+**🔗 Let's turn data into actionable insights together!** 🚀✨
+
+---
