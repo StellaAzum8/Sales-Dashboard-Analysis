@@ -114,6 +114,4 @@ If you have suggestions or want to contribute:
 
 ---
 
-**🔗 Let's turn data into actionable insights together!** 🚀✨
-
 ---
